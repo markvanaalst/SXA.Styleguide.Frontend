@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"name": ".root",
+			"path": "."
+		},
+		{
+			"name": "Styleguide Theme",
+			"path": "src\\-\\media\\Themes\\Sitecore\\Styleguide\\Styleguide"
+		},
+		{
+			"name": "Scriban Templates",
+			"path": "src\\-\\scriban"
+		},
+		{
+			"name": "Extension Theme",
+			"path": "src\\-\\media\\Extension Themes\\CSS Animations"
+		}
+	],
+	"extensions": {
+		"recommendations": [
+		  "adamnaj.sitecore-scriban",
+		  "xoofx.scriban"
+		]
+	},
+	"settings": {
+		"terminal.integrated.cwd": "/src/-/media/Themes/Sitecore/Styleguide/Styleguide/",
+		"terminal.integrated.shell.windows": "/src/-/media/Themes/Sitecore/Styleguide/Styleguide/"
+
+
+	}
+}
