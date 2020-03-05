@@ -7,7 +7,7 @@ This repository holds all the frontend code needed to run the site. It consists 
 -|-
 Theme|\src\-\media\Themes\Sitecore\Styleguide\Styleguide\
 Extension Theme|\src\-\media\Extension Themes\CSS Animations
-Scriban|src\-\scriban
+Scriban|\src\-\scriban
 
 ### Requirements
 The Styleguide is built to support **[Sitecore Experience Platform 9.3](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/93/Sitecore_Experience_Platform_93_Initial_Release.aspx)** using **[Sitecore Experience Accelerator (SXA) 9.3](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/9x/Sitecore_Experience_Accelerator_930.aspx)**.
