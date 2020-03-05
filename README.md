@@ -1,5 +1,4 @@
- ![Image alt text](/docs/img/styleguide.png)
-
+<img src="/docs/img/styleguide.svg" width="500">
 The SXA Styleguide is an education site based on SXA that helps explaining the inner working and illustrating best practices. 
 
 This repository holds all the frontend code needed to run the site. It consists of two parts, the SXA themes and the Scriban templates used on the site. The folder structure used in this repository mimics the SXA Creative Exchange output, therefore you can find the sources for the themes and the seperate scriban templates in the following folders:
