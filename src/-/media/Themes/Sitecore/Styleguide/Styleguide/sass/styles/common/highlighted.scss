@@ -2,7 +2,7 @@
 $highlightedPosition :( "top", "bottom", "left", "right");
 @each $pos in $highlightedPosition {
     .highlighted-#{$pos} {
-        /*background: #ffffff;*/
+        background: #ffffff;
         border-#{$pos}-width: 3px;
         border-#{$pos}-color: $border-basic-active;
         border-style: solid;

@@ -3,7 +3,6 @@
 @import "base/fontawesome/font-awesome-mix-var";
 .breadcrumb.component {
     background: $breadcrumb-bg;
-    padding-top: 5px;
     @include clearfix();
     &.breadcrumb-navigation {
         overflow: visible;
@@ -16,7 +15,6 @@
     }
     ol {
         list-style: none;
-        margin-left: 0px;
     }
     .field-title {
         display: inline-block;
@@ -30,9 +28,6 @@
         position: relative;
         display: block;
         float: left;
-        &.breadcrumb-item {
-            margin-left: 0;
-        }
         >.navigation-title {
             display: inline-block;
             vertical-align: middle;
@@ -41,7 +36,6 @@
             }
         }
         &.last {
-            /*top: 8px;*/
             .separator {
                 display: none;
             }
@@ -61,9 +55,6 @@
                 left: auto;
                 z-index: 100;
             }
-        }
-        &.home {
-            margin-left: 0px;
         }
         >ol {
             box-sizing: border-box;

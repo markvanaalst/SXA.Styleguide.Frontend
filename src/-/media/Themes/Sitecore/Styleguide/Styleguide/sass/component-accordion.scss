@@ -31,7 +31,7 @@
             }
             .field-heading {
                 font-size: $accordion-header;
-                padding-left: 45px;
+                padding-left: 34px;
                 font-weight: normal;
                 &:before {
                     @include fa-icon();
@@ -58,9 +58,8 @@
         }
     }
     .toggle-content {
-        padding: 10px 25px;
+        padding: 10px;
         background-color: $accordion-toggled-bg;
-        font-size: 14px;
         @include clearfix();
         .component {
             margin-top: 0;

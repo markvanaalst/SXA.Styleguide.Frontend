@@ -2,12 +2,12 @@
 @import "../../abstracts/mixins";
 .boxed {
     box-sizing: border-box;
-    margin: 20px 0 20px 0px;
+    margin: 20px 0;
     @include respond-to(tablet) {
-        padding: 0px;
+        padding: 10px;
     }
     @include respond-to(mobile) {
-        padding: 0px;
+        padding: 10px;
     }
     >div {
         @include wrapper();

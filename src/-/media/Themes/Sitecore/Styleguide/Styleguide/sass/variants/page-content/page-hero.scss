@@ -1,7 +1,7 @@
 @import "abstracts/vars";
 @import "abstracts/mixins";
 
-.component.content.page-hero {
+&.page-hero {
     padding: 0px;
 
     .page-hero-text-container {

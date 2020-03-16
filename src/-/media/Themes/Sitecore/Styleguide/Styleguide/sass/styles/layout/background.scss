@@ -36,11 +36,3 @@
 .container-color-background {
     background: $bg-blue;
 }
-.container-darkgrey-background {
-    background: #666;
-}
-.container-contain-background {
-    >.component-content {
-        background-size: contain;
-    }
-}

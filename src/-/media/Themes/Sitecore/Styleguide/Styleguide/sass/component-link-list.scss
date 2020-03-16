@@ -5,8 +5,6 @@
     background: $link-list-bg;
     h1, h2, h3, h4, h5, h6 {
         @include border-basic(bottom, $link-list-header-border);
-        font-weight: 500;
-        margin-bottom: 10px;
     }
     >.component-content {
         ul {
@@ -21,7 +19,7 @@
                 color: $link-list-item-color;
                 position: relative;
                 padding-left: 10px;
-                font-size: 1.1em;
+                font-size: 1em;
                 text-decoration: none;
                 &:before {
                     @include fa-icon();

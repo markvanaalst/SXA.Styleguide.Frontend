@@ -1,8 +1,7 @@
 @import "vars";
 
 /* breakpoints */
-
-
+ 
 $break-desktop: 1170px;
 $break-mobile: 380px;
 $break-mobile-horizontal: 640px;
@@ -40,10 +39,6 @@ $break-mobile-large: 786px;
 @mixin opensans-font-stack() {
     font-family: "Open Sans", Helvetica, Verdana, Tahoma, sans-serif;
 }
-@mixin lato-font-stack() {
-    font-family: "Lato", sans-serif;
-}
-
 @mixin loading-gif() {
     background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJibGFjayI+DQogIDxwYXRoICBvcGFjaXR5PSIuMjUiIGQ9Ik0xNiAwIEExNiAxNiAwIDAgMCAxNiAzMiBBMTYgMTYgMCAwIDAgMTYgMCBNMTYgNCBBMTIgMTIgMCAwIDEgMTYgMjggQTEyIDEyIDAgMCAxIDE2IDQiLz4NCiAgPHBhdGggZmlsbD0nIzFhODBiNicgZD0iTTE2IDAgQTE2IDE2IDAgMCAxIDMyIDE2IEwyOCAxNiBBMTIgMTIgMCAwIDAgMTYgNHoiPg0KICAgIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiBmcm9tPSIwIDE2IDE2IiB0bz0iMzYwIDE2IDE2IiBkdXI9IjAuOHMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPg0KICA8L3BhdGg+DQo8L3N2Zz4NCg==);
     background-position: center center;
@@ -90,7 +85,7 @@ $break-mobile-large: 786px;
     @else {
         border-width: $border-width;
             border-style: solid;
-            border-color: $border-color; 
+            border-color: $border-color;
     }
 }
 @mixin fixed-bg($pos, $min-height:240px) {

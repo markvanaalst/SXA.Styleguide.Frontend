@@ -1,21 +1,26 @@
-&.text-right-image-left {
+&.text-image {
     background: transparent !important;
     
     > .component-content {
         border: 0;
-/*
-        h1 {
-            font-size: 4em;
-        }
-        .field-promoicon img {
-            height: auto;
-            width: auto;
-        }
 
         div.text {
-            width: 45%;
-            margin-right: 15px;
+            width: 65%;
+            h2 {
+                font-weight: 400;
+            }
         }
-        */
     }
-} 
+}
+&.text-image.image-right {
+    .field-promoicon {
+        margin-right: 40px;
+        width: auto;
+    }
+}
+&.text-image.image-left {
+    .field-promoicon {
+        margin-right: 40px;
+        width: auto;
+    }
+}

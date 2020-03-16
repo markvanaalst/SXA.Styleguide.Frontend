@@ -11,21 +11,22 @@
     }
     .rel-level1 {
         float: left;
-        margin-right: 25px;
         margin-top: 10px;
-        /*&.active {
+        margin-right: 25px;
+        &.active {
             >.navigation-title>a {
                 border-color: $nav-border-root;
             }
-        }*/
+        }
         >.navigation-title>a {
+            border-width: 0 0 2px 0;
             border-color: transparent;
+            font-weight: lighter;
+            font-size: 20px;
             &:hover {
-                border-color: $nav-color-root;
+                border-color: $nav-border-root;
+                color: $red
             }
-            font-size: 16px;
-            font-weight: 600;
-            margin-right: 0px; 
         }
         &.submenu {
             >.navigation-title a {
@@ -84,7 +85,8 @@
     }
     .rel-level2 {
         &:hover, &:focus {
-            background: #ebebeb;
+            transition: background .2s ease-in;
+            background: $nav-bg-submenu-active;
         }
         div>a {
             display: block;
@@ -103,7 +105,6 @@
                     text-align: left;
                 }
             }
-
         }
         >ul {
             overflow: hidden;
@@ -148,7 +149,6 @@
     }
     // Additional styles fot drop down horizontal navigation 
     &.navigation-main-horizontal {
-        padding-top: 10px;
         .submenu>ul {
             padding-left: 0;
         }
@@ -194,7 +194,8 @@
             padding-left: 0;
             width: auto;
             left: auto;
-            @include border-basic(right, $nav-submenu-item-border, 1px);
+            min-width: 180px;
+            border-top: 2px solid $red;
             >li {
                 padding: 5px 10px;
             }

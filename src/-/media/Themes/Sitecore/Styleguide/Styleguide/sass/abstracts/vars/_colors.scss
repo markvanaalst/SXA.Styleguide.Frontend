@@ -26,11 +26,11 @@ $text-blue-active:#15909c !default;
 $text-submenu-active: #222 !default;
 $text-disabled: #aaa !default;
 $text-black: #000 !default;
-$text-red:#de232f;
-//Border colors 
+$text-red:$red;
+//Border colors
 $border-gray: #f0f0f0 !default;
 $border-white: #ffffff !default;
-$border-basic-color: #fe2911 !default;
+$border-basic-color: $red !default;
 $border-basic-active:#cc0000 !default;
 $border-nav-submenu:#e1e1e1;
 //Styles for each component separately
@@ -154,7 +154,7 @@ $play-list-item-active-bg:$bg-blue;
 $play-list-border:$border-basic-color;
 $play-list-title-border:$border-basic-color;
 //Promo
-$promo-bg:$bg-basic-color;
+$promo-bg:transparent;
 $promo-bg-hero:rgba(0, 0, 0, 0.5);
 $promo-border:$border-gray;
 $promo-hero-text-color:$text-white;
@@ -173,16 +173,16 @@ $menu-hover-color:#1b809e;
 $menu-active-color:#176f89;
 //Navigation
 $nav-bg:transparent;
-$nav-color-root:$black;
-$nav-color-root-active:$red;
-$nav-border-root:$border-basic-color;
+$nav-color-root:$text-basic;
+$nav-color-root-active:$text-basic;
+$nav-border-root:$red;
 $nav-border-root-active:$border-basic-color;
 $nav-color-submenu:$text-submenu-active;
 $nav-color-submenu-active:$text-submenu-active;
 $nav-bg-root:$bg-submenu-active;
 $nav-bg-submenu:$bg-submenu-active;
 $nav-bg-submenu-active:$bg-submenu-active;
-$nav-border-submenu:$border-basic-color;
+$nav-border-submenu:$red;
 $nav-submenu-item-border:$border-gray;
 $nav-submenu-border-active:$border-basic-color;
 //Social Media Share

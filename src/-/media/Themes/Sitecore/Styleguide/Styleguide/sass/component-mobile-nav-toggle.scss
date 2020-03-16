@@ -2,7 +2,7 @@
 @import "abstracts/mixins";
 @import "base/fontawesome/font-awesome-mix-var";
 .toggle {
-    &.mobile-navigation-toggle {
+    &.mobile-navigation-toggle { 
         details[open] summary:after {
             content: $fa-var-times;
         }

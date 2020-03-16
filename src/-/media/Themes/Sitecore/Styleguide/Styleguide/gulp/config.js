@@ -8,7 +8,7 @@ module.exports = {
     sassSourceMap: true,
     // Please configure
     serverOptions: {
-        server: 'https://sxa.sc93.local', //need to be changed
+        server: 'http://sitecorexastyleguide_cm_1', //need to be changed
         removeScriptPath: '/-/script/v2/master/RemoveMedia',
         uploadScriptPath: '/sitecore modules/PowerShell/Services/RemoteScriptCall.ashx',
         updateTemplatePath: '/-/script/v2/master/ChangeTemplate',
