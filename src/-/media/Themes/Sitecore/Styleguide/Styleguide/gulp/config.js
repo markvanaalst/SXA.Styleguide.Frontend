@@ -1,14 +1,13 @@
 const extend = require('extend');
+const fs = require('fs')
 const path = require('path');
-const {configUtils} = require('@sxa/celt');
 
 module.exports = {
-
     // Change to TRUE if you want add source map for sass files
-    sassSourceMap: true,
+    sassSourceMap: false,
     // Please configure
     serverOptions: {
-        server: 'http://sitecorexastyleguide_cm_1', //need to be changed
+        server: 'https://scbasics93sc.dev.local/', //need to be changed
         removeScriptPath: '/-/script/v2/master/RemoveMedia',
         uploadScriptPath: '/sitecore modules/PowerShell/Services/RemoteScriptCall.ashx',
         updateTemplatePath: '/-/script/v2/master/ChangeTemplate',
@@ -17,12 +16,10 @@ module.exports = {
     },
 
     autoprefixer: {
-        browsers: ['last 2 versions',
-            '> 1%',
-            'ie 9',
-            'opera 12.1',
-            'ios 6',
-            'android 4'
+        "overrideBrowserslist": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
         ],
         cascade: false
     },
@@ -30,8 +27,8 @@ module.exports = {
     excludedPath: [
         'styles/has.css', // can be a string
         ///[\\\/][\w-]*.css$/g   //exclude all css files
-        /[\\\/]test.css$/g //exclude test.css files
-        ///[\\\/][\w-]*.css.map$/g //exclude css.map files
+        /[\\\/]test.css$/g, //exclude test.css files
+        /[\\\/][\w-]*.css.map$/g //exclude css.map files
         ///styles[\\\/][\w-]*.css$/g //exclude all css files from style folder
     ],
     //Server check all items names with this rule. It is not recommended to change
@@ -51,34 +48,42 @@ module.exports = {
 
     html: {
         path: (function () {
+            if (!global.rootPath) return;
+
             let rootCreativeExchangePath = global.rootPath.split('-\\media'),
                 _path = './';
             if (rootCreativeExchangePath.length > 1) {
-                _path = path.relative('./', global.rootPath.split('-\\media')[0])
-            }
+                _path = _path + path.relative('./', global.rootPath.split('-\\media')[0]).split(path.sep).join('/')
+            }else{
+				return;
+			}
             return _path + '/**/*.html';
         })()
     },
     scriban: {
         path: (function () {
+            if (!global.rootPath) return;
+
             let rootCreativeExchangePath = global.rootPath.split('-\\media'),
                 _path = './';
             if (rootCreativeExchangePath.length > 1) {
-                _path = path.relative('./', global.rootPath.split('-\\media')[0])
+                _path = _path + path.relative('./', global.rootPath.split('-\\media')[0]).split(path.sep).join('/')
             }
             return _path + '/-/scriban/**/*.scriban';
         })(),
         metadataFilePath: (function () {
+            if (!global.rootPath) return;
+
             let rootCreativeExchangePath = global.rootPath.split('-\\media'),
                 _path = './';
             if (rootCreativeExchangePath.length > 1) {
-                _path = path.relative('./', global.rootPath.split('-\\media')[0])
+                _path = _path + path.relative('./', global.rootPath.split('-\\media')[0]).split(path.sep).join('/')
             }
             return _path + '/-/scriban/metadata.json';
         })()
     },
     img: {
-        path: 'images/**/*'
+        path: 'images/**/*.*'
     },
     js: {
         path: 'scripts/**/*.js',
@@ -102,7 +107,7 @@ module.exports = {
         minificationPath: ['styles/*.css'],
         cssOptimiserFilePath: 'styles/',
         cssOptimiserFileName: 'pre-optimized-min.css',
-        cssSourceMap: true,
+        cssSourceMap: false,
         enableMinification: true,
         disableSourceUploading: true
     },
@@ -136,7 +141,9 @@ module.exports = {
         },
         disableSourceUploading: true
     },
-
+    gulpConfig: {
+        path: ['gulp/*.js','gulp/*.json','gulpfile.js']
+    },
     sprites: {
         flags: {
             spritesmith: {
@@ -191,6 +198,7 @@ module.exports = {
         'tag-cloud': 'component-tag-cloud.scss',
         'tag-list': 'component-tag-list.scss',
         'title': 'component-title.scss',
+        'language-selector': 'component-language-selector.scss'
     },
 
     loginQuestions: [{
@@ -211,8 +219,31 @@ module.exports = {
     user: { login: '', password: '' },
 
     init: function () {
-        extend(this.serverOptions, configUtils.getConf().serverOptions);
+        if (!isCeltInstalled()) return this;
+
+        // gulpfile.js didn't run, so postinstall script is running
+        if (!global.rootPath) {
+            postInit();
+
+            return this;
+        }
+
+        const { configUtils } = require('@sxa/celt');
+
+        let confUtil = configUtils ? configUtils : global.configUtils;
+        extend(this.serverOptions, confUtil.getConf().serverOptions);
+
         return this;
     }
 
 }.init();
+
+function isCeltInstalled() {
+    return fs.existsSync(path.resolve(__dirname, '../node_modules/@sxa/celt'));
+}
+
+function postInit() {
+    global.rootPath = path.resolve(__dirname, '../');
+
+    require('@sxa/celt/util/postInit');
+}
